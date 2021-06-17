@@ -44,6 +44,8 @@ cd Attack-Log-Webhook
 
 npm i
 
+nano index.js // then edit constants
+
 node .
 ```
 
