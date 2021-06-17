@@ -35,20 +35,6 @@ node index.js
 ```
 **OR**
 ```
-git clone https://github.com/V0ltic/Attack-Log-Webhook.git
-
-cd Attack-Log-Webhook
-
-npm i
-
-nano index.js // then edit constants
-
-node .
-```
-
-or
-
-```
 
 git clone https://github.com/V0ltic/Attack-Log-Webhook.git
 
