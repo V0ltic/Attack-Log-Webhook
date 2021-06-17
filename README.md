@@ -23,7 +23,7 @@ v16.x
 ```
 Upload the files into a folder on your vps then:
 
-cd foldername
+cd foldername/src/
 
 npm i gradient-string
 npm i node-imap
@@ -52,7 +52,7 @@ or
 
 git clone https://github.com/V0ltic/Attack-Log-Webhook.git
 
-cd Attack-Log-Webhook
+cd Attack-Log-Webhook/src/
 
 npm i
 
