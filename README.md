@@ -1,13 +1,13 @@
 # Attack Log Webhook
  Notify when your server gets attacked using discord webhooks by reading emails.
 
-**Install Node (ubuntu):**
+**Install Node (ubuntu & debian):**
 ```
 sudo apt update
 sudo apt -y upgrade
 
 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt -y install nodejs
 ```
 
@@ -16,7 +16,7 @@ sudo apt -y install nodejs
 Command: node -v
 
 $ node --version
-v12.x
+v16.x
 ```
 
 **After installing Node:**
@@ -32,6 +32,19 @@ OR
 npm i
 
 node index.js
+```
+
+or
+
+```
+
+git clone https://github.com/V0ltic/Attack-Log-Webhook.git
+
+cd Attack-Log-Webhook
+
+npm i
+
+node .
 ```
 
 **NOTE:** Change the settings to your email login, etc.
