@@ -1,16 +1,19 @@
 {
-  "name": "voltic-attack-logs",
-  "version": "1.0.0",
-  "description": "Notify when your server gets attacked using discord webhooks by reading emails.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Voltic | 𝙫𝙤𝙡𝙩𝙞𝙘.#1337",
-  "license": "ISC",
-  "dependencies": {
-    "discord-webhook-node": "^1.1.8",
-    "gradient-string": "^1.2.0",
-    "node-imap": "^0.9.6"
-  }
+	"name": "voltic-attack-logs",
+	"version": "1.0.1",
+	"description": "Notify when your server gets attacked using discord webhooks by reading emails.",
+	"main": "src/index.js",
+	"scripts": {
+		"start": "node src"
+	},
+	"author": "Voltic | 𝙫𝙤𝙡𝙩𝙞𝙘.#1337",
+	"contributors": [
+		"Cync7X | Cync#7777 (smh)"
+	],
+	"license": "CPAL-1.0",
+	"dependencies": {
+		"discord-webhook-node": "^1.1.8",
+		"gradient-string": "^1.2.0",
+		"node-imap": "^0.9.6"
+	}
 }

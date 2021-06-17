@@ -7,7 +7,7 @@ sudo apt update
 sudo apt -y upgrade
 
 sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt -y install nodejs
 ```
 
@@ -16,7 +16,7 @@ sudo apt -y install nodejs
 Command: node -v
 
 $ node --version
-v12.x
+v16.x
 ```
 
 **After installing Node:**
@@ -35,6 +35,21 @@ node index.js
 ```
 **OR**
 ```
+git clone https://github.com/V0ltic/Attack-Log-Webhook.git
+
+cd Attack-Log-Webhook
+
+npm i
+
+nano index.js // then edit constants
+
+node .
+```
+
+or
+
+```
+
 git clone https://github.com/V0ltic/Attack-Log-Webhook.git
 
 cd Attack-Log-Webhook
