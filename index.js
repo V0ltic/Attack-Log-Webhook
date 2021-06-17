@@ -8,6 +8,14 @@ const { exec } = require("child_process");
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 
 
+///////////////* Server Settings *///////////////
+
+// Interface
+var device = "eth0";
+
+///////////////////////////////////////////////
+
+
 ///////////////* IMAP Settings *///////////////
 
 // Email Username
