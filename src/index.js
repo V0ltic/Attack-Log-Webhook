@@ -13,6 +13,12 @@
 const IMAP = ["EMAIL", "PASSWORD", "HOST / PROVIDER", "PORT"];
 
 /**
+ * Used ethernet interface
+ * By default this is eth0 but on some servers for example from ovh this can be ens3, etc.
+ */
+const device = "eth0";
+
+/**
  * Configure your webhooks
  * self explanatory
  */
@@ -22,18 +28,16 @@ const COLOR = "" || "#ff4343";
 const LOCATION = "" || "Seggs City, Seggsistan";
 
 /**
- * self explanatory
+ * self explanatory (lowercase only!)
  */
-const startMessage = "Attack Detected";
-const stopMessage = "Attack Stopped";
+const startMessage = "attack detected";
+const stopMessage = "attack stopped";
 
 /**
  * Dumbs Dumbs,
  * Don't scroll beyond here.
  * :)
  */
-
-const device = "eth0";
 
 const IMAP_CLIENT = require("node-imap");
 const gradient = require("gradient-string")(["#eb3a34", "#eb6b34"]);
