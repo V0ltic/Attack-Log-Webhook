@@ -159,7 +159,6 @@ imap.on("error", (err) => {
 });
 
 process.on("uncaughtException", () => {
-	log(`[-] | Error | ${err}`);
 	count++;
 });
 
