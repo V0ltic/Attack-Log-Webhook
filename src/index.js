@@ -10,7 +10,7 @@
  * HOST => outlook, gmail, custom
  * PORT => IMAP is 993 by default
  */
-const IMAP = ["EMAIL", "PASSWORD", "HOST / PROVIDER", "PORT"];
+const IMAP = ["EMAIL", "PASS", "imap-mail.outlook.com", "993"];
 
 /**
  * Used ethernet interface
@@ -123,25 +123,26 @@ const checker = () => {
 					let date = data["date"];
 					let message = subject.toString().toLocaleLowerCase();
 
-					if (!message.includes(startMessage) || !message.includes(stopMessage)) return count++;
-					imap.setFlags(results, ["\\Seen"], (err) => {
-						if (!err) return errors++;
-						if (!message.includes(startMessage)) return webhook.send(stop);
-						const today = new Date().toString().split(" GMT")[0];
-						exec(
-							`tcpdump -n -s0 -c 400 -w ../dumps/${
-								today.split(" ")[1] +
-								"_" +
-								today.split(" GMT")[0].split(" ")[2] +
-								"_" +
-								today.split(" GMT")[0].split(" ")[4]
-							}.pcap`
-						);
-						info(`vnstat -i ${device} -tr | grep tx | awk '{print $2 " " $3 " | " $4 " pps" }'`, (info) => {
-							attacks.push(`[ATTACK] | ${info.toUpperCase()} | [${subject}] | [${date}]`);
-							webhook.send(start.addField("**Attack Info »**", info));
+					if (message.includes(startMessage) || message.includes(stopMessage)) {
+						imap.setFlags(results, ["\\Seen"], (err) => {
+							if (err) return errors++;
+							if (!message.includes(startMessage)) return webhook.send(stop);
+							const today = new Date().toString().split(" GMT")[0];
+							exec(
+								`tcpdump -n -s0 -c 400 -w ../dumps/${
+									today.split(" ")[1] +
+									"_" +
+									today.split(" GMT")[0].split(" ")[2] +
+									"_" +
+									today.split(" GMT")[0].split(" ")[4]
+								}.pcap`
+							);
+							info(`vnstat -i ${device} -tr | grep tx | awk '{print $2 " " $3 " | " $4 " pps" }'`, (info) => {
+								attacks.push(`[ATTACK] | ${info.toUpperCase()} | [${subject}] | [${date}]`);
+								webhook.send(start.addField("**Attack Info »**", info));
+							});
 						});
-					});
+					}
 				});
 			});
 		});
