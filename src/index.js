@@ -167,7 +167,7 @@ process.on("uncaughtException", () => {
 	count++;
 });
 
-process.on("unhandledRejection", () => {
+process.on("unhandledRejection", (err) => {
 	log(`[-] | Error | ${err}`);
 });
 
